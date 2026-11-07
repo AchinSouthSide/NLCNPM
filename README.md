@@ -29,6 +29,7 @@ Yêu cầu .NET 10 SDK, Visual Studio ASP.NET workload và SQL Server LocalDB. K
 - [Kiến trúc và luồng](docs/architecture.md)
 - [Cơ sở dữ liệu](docs/database.md)
 - [Yêu cầu và kiểm thử](docs/requirements-and-tests.md)
+- [Bàn giao và prompt phiên tiếp theo](docs/HANDOFF_NEXT_SESSION.md)
 
 ## Chưa triển khai
 

@@ -14,7 +14,7 @@
 | FR-15–16 | Bình luận và đánh giá | Có; rating 1–5, duy nhất theo user/resource |
 | FR-17–18 | Phiên bản và nhật ký | Có phiên bản; log cơ bản |
 | FR-19 | Kiểm duyệt | Duyệt/từ chối/ẩn/lưu trữ |
-| FR-20–21 | Dashboard/báo cáo | Bảng cơ bản có; dashboard chưa có |
+| FR-20–21 | Dashboard/báo cáo | Dashboard tổng quan cơ bản có; báo cáo chi tiết và trang nhật ký chưa có |
 
 ## Test cases đề xuất
 
