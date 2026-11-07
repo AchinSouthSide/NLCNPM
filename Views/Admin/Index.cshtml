@@ -1,0 +1,5 @@
+@model NLCNPM.Models.AdminDashboardViewModel
+@{ ViewData["Title"] = "Dashboard quản trị"; }
+<h1>Dashboard quản trị</h1><p class="text-secondary">Số liệu lấy trực tiếp từ dữ liệu hiện có.</p><div class="row g-3 mb-4">
+@foreach (var card in new[] { ("Tài khoản", Model.Users), ("Tài liệu", Model.Resources), ("Đã duyệt", Model.Approved), ("Chờ duyệt", Model.Pending), ("Lượt tải", Model.Downloads), ("Bình luận", Model.Comments) }) { <div class="col-6 col-lg-4"><div class="card shadow-sm h-100"><div class="card-body"><div class="text-secondary">@card.Item1</div><div class="display-6">@card.Item2</div></div></div></div> }
+</div><p>Điểm đánh giá trung bình: <strong>@Model.AverageRating.ToString("0.0") / 5</strong></p><a class="btn btn-outline-primary" asp-action="Users">Quản lý tài khoản</a> <a class="btn btn-primary" asp-controller="Moderation" asp-action="Index">Kiểm duyệt tài liệu</a>

@@ -1,0 +1,8 @@
+@model IReadOnlyList<NLCNPM.Models.Resource>
+@{ ViewData["Title"] = "Tài nguyên học tập"; }
+<div class="d-flex justify-content-between align-items-center mb-4"><div><h1>Tài nguyên học tập</h1><p class="text-secondary">Khám phá tài liệu được cộng đồng chia sẻ.</p></div><a class="btn btn-primary" asp-action="Create">Chia sẻ tài liệu</a></div>
+@if (TempData["Notice"] is string notice) { <div class="alert alert-success">@notice</div> }
+<form method="get" class="row g-2 mb-4"><div class="col"><input class="form-control" name="q" value="@ViewBag.Query" placeholder="Tìm theo tiêu đề hoặc mô tả" /></div><div class="col-auto"><button class="btn btn-outline-primary">Tìm kiếm</button></div></form>
+@if (Model.Count == 0) { <div class="alert alert-light border">Chưa có tài liệu phù hợp.</div> }
+<div class="row g-3">@foreach (var item in Model) { <div class="col-md-6 col-lg-4"><article class="card h-100 shadow-sm"><div class="card-body"><span class="badge text-bg-light">@item.Status</span><h2 class="h5 mt-3"><a asp-action="Details" asp-route-id="@item.Id" class="text-decoration-none">@item.Title</a></h2><p class="text-secondary">@(item.Description.Length > 160 ? item.Description[..160] + "…" : item.Description)</p><small class="text-secondary">@item.Owner?.DisplayName · @item.CreatedAtUtc.ToLocalTime().ToString("dd/MM/yyyy")</small></div></article></div> }</div>
+@if ((int)ViewBag.TotalPages > 1) { <nav class="mt-4" aria-label="Phân trang"><ul class="pagination">@for (var p = 1; p <= (int)ViewBag.TotalPages; p++) { <li class="page-item @(p == (int)ViewBag.Page ? "active" : "")"><a class="page-link" asp-action="Index" asp-route-page="@p" asp-route-q="@ViewBag.Query">@p</a></li> }</ul></nav> }
